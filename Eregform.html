@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #card{
+            border:1px solid black;
+            padding:20px;
+            width:500px;
+            display:grid;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top:150px;
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div id="card">
+        <h2>Registration form</h2>
+    email:<input type="email" name="email" id=""><br><br>
+    username:<input type="text" name="name" id=""><br><br>
+    password:<input type="password" name="pass" id=""><br><br>
+    <button type="submit">submit</button>
+    </div>
+    </div>
+    <script>
+        let useremail=document.getElementsByName("email")[0]
+        let username=document.getElementsByName("name")[0]
+        let pass2=document.getElementsByName("pass")[0]
+        let btn=document.getElementsByTagName("button")[0]
+        let details={}
+        btn.addEventListener("click",(e)=>{
+            e.preventDefault()
+            details.email=useremail.value
+            details.namee=username.value
+            details.password=pass2.value
+            console.log(details)
+            let str=JSON.stringify(details)
+            localStorage.setItem("data",str)
+
+
+        })
+
+
+        
+
+    </script>
+</body>
+</html>

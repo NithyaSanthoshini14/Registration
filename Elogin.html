@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #card{
+        border:1px solid black;
+        padding:20px;
+        width:400px;
+        display:grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top:150px;
+    
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="card">
+            <h2>Login form</h2>
+    email<input type="email" name="mail" id=""><br>
+    password<input type="password" name="pass" id=""><br>
+    <button onclick=verify()>login</button>
+    </div>
+    </div>
+    <script>
+        function verify(){
+            let a=document.getElementsByName("mail")[0].value
+        let b=document.getElementsByName("pass")[0].value
+        let regform=JSON.parse(localStorage.getItem("data"))
+            console.log(regform)
+            if(a==regform.email && b==regform.password){
+                alert("login successfully")
+                location.assign("./ecommerce.html")
+            }else{
+                alert("invalid login")
+            }
+
+    }
+
+    </script>
+    
+</body>
+</html>
